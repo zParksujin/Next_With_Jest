@@ -1,6 +1,6 @@
 const myMockFn = jest.fn((cb) => cb(null, true));
 
-myMockFn((err, val) => console.log(val));
+// myMockFn((err, val) => console.log(val));
 
 jest.mock("../utils/foo"); // this happens automatically with automocking
 const foo = require("../utils/foo");
@@ -17,10 +17,10 @@ test("test", () => {
     .mockImplementationOnce((cb) => cb(null, true))
     .mockImplementationOnce((cb) => cb(null, false));
 
-  myMockFn((err, val) => console.log(val));
+  // myMockFn((err, val) => console.log(val));
   // > true
 
-  myMockFn((err, val) => console.log(val));
+  // myMockFn((err, val) => console.log(val));
   // > false
 });
 
