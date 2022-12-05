@@ -9,7 +9,7 @@ const foo = require("../utils/foo");
 
 test("test", () => {
   foo.mockImplementation(() => 42);
-  console.log(foo());
+  // console.log(foo());
   foo();
 
   const myMockFn = jest
