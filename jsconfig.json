@@ -1,103 +1,137 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
+        "target": "es5",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "incremental": true,
         "paths": {
-            /* components */
             "@/components/*": [
                 "components/*"
             ],
-            "@/alarm/*": [
-                "components/alarm/*"
-            ],
-            "@/board/*": [
-                "components/board/*"
-            ],
-            "@/card/*": [
-                "components/card/*"
-            ],
-            "@/collection/*": [
-                "components/collection/*"
-            ],
-            "@/common/*": [
-                "components/common/*"
-            ],
-            "@/creator/*": [
-                "components/creator/*"
-            ],
-            "@/layout/*": [
-                "components/layout/*"
-            ],
-            "@/msg/*": [
-                "components/msg/*"
-            ],
-            "@/settings/*": [
-                "components/settings/*"
-            ],
-            "@/subscribe/*": [
-                "components/subscribe/*"
-            ],
-            "@/timeline/*": [
-                "components/timeline/*"
-            ],
-            /* config */
-            "@/config/*": [
-                "config/*"
-            ],
-            /* pages */
             "@/pages/*": [
                 "pages/*"
             ],
-            /* store */
-            "@/store/*": [
-                "store/*"
-            ],
-            "@/atom/*": [
-                "store/atom/*"
-            ],
-            "@/context/*": [
-                "store/context/*"
-            ],
-            /* styles */
-            "@/styles/*": [
-                "styles/*"
-            ],
-            "@/css/*": [
-                "styles/css/*"
-            ],
-            /* util */
-            "@/util/*": [
-                "util/*"
-            ],
-            "@/api/*": [
-                "util/api/*"
-            ],
-            "@/endPoint/*": [
-                "util/api/end_point/*"
-            ],
-            "@/apiKey/*": [
-                "util/api/key/*"
-            ],
-            "@/query/*": [
-                "util/api/query/*"
-            ],
-            "@/element/*": [
-                "util/element/*"
-            ],
-            "@/hoc/*": [
-                "util/hoc/*"
-            ],
-            "@/hook/*": [
-                "util/hook/*"
-            ],
-            "@/modal/*": [
-                "util/modal/*"
-            ],
-            "@/globalModal/*": [
-                "util/modal/global/*"
-            ],
-            "@/modalComponent/*": [
-                "util/modal/components/*"
-            ],
+            //   "@/styles/*": ["styles/*"]
         }
-    }
+    },
+    "include": [
+        "**/*.js",
+        "**/*.jsx"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }
+// "paths": {
+//     /* components */
+//     "@/components/*": [
+//         "components/*"
+//     ],
+//     "@/alarm/*": [
+//         "components/alarm/*"
+//     ],
+//     "@/board/*": [
+//         "components/board/*"
+//     ],
+//     "@/card/*": [
+//         "components/card/*"
+//     ],
+//     "@/collection/*": [
+//         "components/collection/*"
+//     ],
+//     "@/common/*": [
+//         "components/common/*"
+//     ],
+//     "@/creator/*": [
+//         "components/creator/*"
+//     ],
+//     "@/layout/*": [
+//         "components/layout/*"
+//     ],
+//     "@/msg/*": [
+//         "components/msg/*"
+//     ],
+//     "@/settings/*": [
+//         "components/settings/*"
+//     ],
+//     "@/subscribe/*": [
+//         "components/subscribe/*"
+//     ],
+//     "@/timeline/*": [
+//         "components/timeline/*"
+//     ],
+//     /* config */
+//     "@/config/*": [
+//         "config/*"
+//     ],
+//     /* pages */
+//     "@/pages/*": [
+//         "pages/*"
+//     ],
+//     /* store */
+//     "@/store/*": [
+//         "store/*"
+//     ],
+//     "@/atom/*": [
+//         "store/atom/*"
+//     ],
+//     "@/context/*": [
+//         "store/context/*"
+//     ],
+//     /* styles */
+//     "@/styles/*": [
+//         "styles/*"
+//     ],
+//     "@/css/*": [
+//         "styles/css/*"
+//     ],
+//     /* util */
+//     "@/util/*": [
+//         "util/*"
+//     ],
+//     "@/api/*": [
+//         "util/api/*"
+//     ],
+//     "@/endPoint/*": [
+//         "util/api/end_point/*"
+//     ],
+//     "@/apiKey/*": [
+//         "util/api/key/*"
+//     ],
+//     "@/query/*": [
+//         "util/api/query/*"
+//     ],
+//     "@/element/*": [
+//         "util/element/*"
+//     ],
+//     "@/hoc/*": [
+//         "util/hoc/*"
+//     ],
+//     "@/hook/*": [
+//         "util/hook/*"
+//     ],
+//     "@/modal/*": [
+//         "util/modal/*"
+//     ],
+//     "@/globalModal/*": [
+//         "util/modal/global/*"
+//     ],
+//     "@/modalComponent/*": [
+//         "util/modal/components/*"
+//     ],
+// }

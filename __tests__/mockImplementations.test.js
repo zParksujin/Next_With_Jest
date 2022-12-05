@@ -54,5 +54,5 @@ test("test2", () => {
   //   expect(myMockFn).toHaveBeenLastCalledWith(arg1, arg2);
 
   //   // 모든 호출과 모의 이름은 스냅샷으로 작성됩니다.
-  //   expect(myMockFn).toMatchSnapshot();
+  expect(myMockFn).toMatchSnapshot();
 });
