@@ -30,7 +30,7 @@ test("test1", () => {
     .mockImplementationOnce(() => "first call")
     .mockImplementationOnce(() => "second call");
 
-  console.log(myMockFn(), myMockFn(), myMockFn(), myMockFn());
+  // console.log(myMockFn(), myMockFn(), myMockFn(), myMockFn());
 });
 
 // mocking name
@@ -42,7 +42,7 @@ test("test2", () => {
     .mockImplementation((scalar) => 42 + scalar)
     .mockName("add42");
 
-  console.log(myMockFn(), myMockFn(), myMockFn(), myMockFn());
+  // console.log(myMockFn(), myMockFn(), myMockFn(), myMockFn());
 
   //   // 모의 함수가 적어도 한 번 호출되었습니다.
   //   expect(myMockFn).toHaveBeenCalled();
