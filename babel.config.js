@@ -1,5 +1,5 @@
 module.exports = {
-  presets: ["next"],
+  presets: ["next", "@babel/preset-env"],
   plugins: [
     ["styled-components", { ssr: true }],
     // "@babel/plugin-transform-runtime",
