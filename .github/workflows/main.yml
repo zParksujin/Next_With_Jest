@@ -1,4 +1,4 @@
-name: Jest CD
+name: Jest CI/CD
 
 on:
   push:
