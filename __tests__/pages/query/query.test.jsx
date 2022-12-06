@@ -2,11 +2,7 @@ import React from "react";
 import { queryClient } from "@/pages/_app";
 import { QueryClientProvider } from "react-query";
 import { renderHook, waitFor } from "@testing-library/react";
-import {
-  useCustomHook,
-  useFetchData,
-  useInfiniteQueryData,
-} from "@/hooks/queryHook";
+import { useCustomHook, useFetchData } from "@/hooks/queryHook";
 
 const wrapper = ({ children }) => (
   <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
@@ -31,17 +27,4 @@ describe("React-Query Test", () => {
     });
     // waitFor(() => expect(result.current.isSuccess).toBe(true));
   });
-});
-
-it("infinite query", async () => {
-  const { result } = renderHook(() => useInfiniteQueryData(), {
-    wrapper,
-  });
-  await waitFor(() => {
-    const { pages, pageParams } = result.current.data;
-    console.log(pages[0].data);
-    console.log(pageParams);
-    expect(pages[0].data.length).toBe(10);
-  });
-  // waitFor(() => expect(result.current.isSuccess).toBe(true));
 });

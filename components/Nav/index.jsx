@@ -16,6 +16,9 @@ function Nav() {
       <Link href={"/button"}>
         <p>Button</p>
       </Link>
+      <Link href={"/infinite"}>
+        <p>Infinite</p>
+      </Link>
     </NavStyled>
   );
 }
