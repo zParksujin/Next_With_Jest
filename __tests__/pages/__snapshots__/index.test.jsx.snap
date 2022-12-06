@@ -3,7 +3,7 @@
 exports[`Home renders a heading 1`] = `
 <div>
   <div>
-    hi
+    Home
   </div>
 </div>
 `;

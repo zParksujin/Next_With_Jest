@@ -15,9 +15,11 @@ export const queryClient = new QueryClient({
 });
 
 function MyApp({ Component, pageProps }) {
+  const getLayout = Component.getLayout || ((page) => page);
   return (
     <QueryClientProvider client={queryClient}>
-      <Component {...pageProps} />
+      {getLayout(<Component {...pageProps} />)}
+      {/* <Component {...pageProps} /> */}
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

@@ -1,13 +1,15 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React from "react";
-import { useRouter } from "next/router";
-import { useQuery } from "react-query";
 import Nav from "@/components/Nav";
-function Home() {
-  return <div>Home</div>;
+import useToggle from "@/hooks/useToggle";
+
+function Button({ initial = false }) {
+  const [on, toggle] = useToggle(initial);
+
+  return <button onClick={toggle}>{on ? "ON" : "OFF"}</button>;
 }
 
-Home.getLayout = function getLayout(page) {
+Button.getLayout = function getLayout(page) {
   return (
     <>
       <div id="container" style={{ padding: "12px" }}>
@@ -22,4 +24,4 @@ export const getStaticProps = async (props) => ({
   props: {},
 });
 
-export default Home;
+export default Button;

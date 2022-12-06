@@ -7,11 +7,11 @@ describe("Home", () => {
   it("renders a heading", () => {
     const { container } = render(<Home />);
 
-    // const heading = screen.getByRole("heading", {
-    //   name: /query/i,
+    // screen.getByRole("div", {
+    //   name: /home/i,
     // });
 
-    const text = screen.getByText("hi");
+    const text = screen.getByText("Home");
 
     // expect(text).toBeInDocument();
 
