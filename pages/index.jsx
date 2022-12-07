@@ -1,10 +1,30 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React from "react";
-import { useRouter } from "next/router";
-import { useQuery } from "react-query";
+// import { unstable_getServerSession } from "next-auth/next";
+// import { authOptions } from "./api/auth/[...nextauth]";
 import Nav from "@/components/Nav";
+import { useSession, signIn, signOut } from "next-auth/react";
 function Home() {
-  return <div>Home</div>;
+  const { data: session, status } = useSession();
+
+  return (
+    <div>
+      <p>Home</p>
+      <button type="button" onClick={signIn}>
+        Sign In
+      </button>
+      <button type="button" onClick={signOut}>
+        Sign Out
+      </button>
+      {session && (
+        <>
+          <div>Auth Name: {session?.user.name}</div>
+          <div>Auth Status: {status}</div>
+          <div>Auth Expires: {session.expires}</div>
+        </>
+      )}
+    </div>
+  );
 }
 
 Home.getLayout = function getLayout(page) {
@@ -18,8 +38,13 @@ Home.getLayout = function getLayout(page) {
   );
 };
 
-export const getStaticProps = async (props) => ({
-  props: {},
-});
-
+export async function getStaticProps({ req, res }) {
+  // const session = await unstable_getServerSession(req, res, authOptions);
+  // console.log(session);
+  return {
+    props: {
+      // session,?
+    },
+  };
+}
 export default Home;

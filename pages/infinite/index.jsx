@@ -1,8 +1,9 @@
 import React from "react";
-import { useUsersQuery } from "@/hooks/test/useInfiniteQueryhooks";
+import { useUsersQuery } from "@/hooks/test/useInfiniteQueryhook";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Nav from "@/components/Nav";
 
-export default function App() {
+export default function Infinite() {
   const { data, error, fetchNextPage, hasNextPage, status } = useUsersQuery();
 
   if (status === "loading") {
@@ -66,4 +67,21 @@ export default function App() {
       </div>
     </div>
   );
+}
+
+Infinite.getLayout = function getLayout(page) {
+  return (
+    <>
+      <div id="container" style={{ padding: "12px" }}>
+        <div id="wrapper">{page}</div>
+        <Nav />
+      </div>
+    </>
+  );
+};
+
+export async function getServerSideProps({ req, res }) {
+  return {
+    props: {},
+  };
 }

@@ -12,27 +12,19 @@ const createJestConfig = nextJest({
 });
 
 const customJestConfig = {
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  // testMatch: [
-  //   "<rootDir>/**/*.test.(js|jsx)",
-  //   "<rootDir>/__tests__/pages/*.test.(js|jsx)",
-  //   "<rootDir>/(tests/unit/**/*.spec.(js|jsx)|**/__tests__/*.(js|jsx))",
-  // ],
-  // testRegex: "(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$",
   testMatch: [
     "<rootDir>/**/*.test.(js|jsx|ts|tsx)",
     "<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))",
   ],
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+  collectCoverageFrom: ["**/*.[jt]s?(x)", "!**/*.config.[jt]s?(x)"],
   moduleFileExtensions: ["js", "json", "jsx", "ts", "tsx", "node"],
   testEnvironment: "jest-environment-jsdom",
-  // transform: {
-  //   "^.+\\.(t|j)sx?$": ["@swc/jest"],
-  // },
-  // transformIgnorePatterns: [
-  //   "<rootDir>/node_modules/",
-  //   "<rootDir>/.next/",
-  //   "^.+\\.module\\.(css|sass|scss)$",
-  // ],
+  // extensionsToTreatAsEsm: [".jsx"],
+  transform: {
+    "^.+\\.(js|jsx)?$": "babel-jest",
+  },
+  transformIgnorePatterns: ["<rootDir>/node_modules/"],
   moduleNameMapper: {
     // Handle CSS imports (without CSS modules)
     "^.+\\.(css|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
@@ -49,6 +41,20 @@ const customJestConfig = {
     "^@/components/(.*)$": "<rootDir>/components/$1",
     "^@/pages/(.*)$": "<rootDir>/pages/$1",
     "^@/hooks/(.*)$": "<rootDir>/hooks/$1",
+  },
+  coverageThreshold: {
+    "./pages/": {
+      statements: 85,
+      branches: 90,
+      functions: 95,
+      lines: 90,
+    },
+    // "./components/": {
+    //   statements: 85,
+    //   branches: 90,
+    //   functions: 95,
+    //   lines: 90,
+    // },
   },
 };
 

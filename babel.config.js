@@ -1,7 +1,7 @@
 module.exports = {
   presets: [
-    "next/babel",
     ["@babel/preset-env", { targets: { node: "current" } }],
+    "next/babel",
     ["@babel/preset-react", { runtime: "automatic" }],
   ],
   plugins: [

@@ -8,7 +8,9 @@ const wrapper = ({ children }) => (
   <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
 );
 
+//
 describe("React-Query Test", () => {
+  // 단일 useQuery Mock 데이터
   it("useQueryTest", () => {
     const { result } = renderHook(() => useCustomHook(), {
       wrapper,
@@ -18,6 +20,7 @@ describe("React-Query Test", () => {
     waitFor(() => expect(result.current.isSuccess).toBe(true));
   });
 
+  // 단일 useQuery api 통신
   it("api network test", async () => {
     const { result } = renderHook(() => useFetchData(), {
       wrapper,
@@ -25,6 +28,5 @@ describe("React-Query Test", () => {
     await waitFor(() => {
       expect(result.current.data.data[0].id).toBe(1);
     });
-    // waitFor(() => expect(result.current.isSuccess).toBe(true));
   });
 });

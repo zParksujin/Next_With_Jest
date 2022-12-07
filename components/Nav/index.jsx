@@ -10,14 +10,17 @@ function Nav() {
       <Link href={"/"}>
         <p>Home</p>
       </Link>
-      <Link href={"/query"}>
-        <p>Query</p>
-      </Link>
       <Link href={"/button"}>
-        <p>Button</p>
+        <p>Render</p>
+      </Link>
+      <Link href={"/query"}>
+        <p>React-Query</p>
       </Link>
       <Link href={"/infinite"}>
-        <p>Infinite</p>
+        <p>Infinite-Query</p>
+      </Link>
+      <Link href={"/atom"}>
+        <p>Atom</p>
       </Link>
     </NavStyled>
   );
