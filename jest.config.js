@@ -44,10 +44,10 @@ const customJestConfig = {
   },
   coverageThreshold: {
     "./pages/": {
-      statements: 50,
+      statements: 40,
       branches: 30,
-      functions: 40,
-      lines: 50,
+      functions: 30,
+      lines: 40,
     },
     // "./components/": {
     //   statements: 85,
